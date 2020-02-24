@@ -37,3 +37,13 @@ let { src, dest } = require('gulp'),
     rename = require('gulp-rename'),
     uglify = require('gulp-uglify-es').default,
     imagemin = require('gulp-imagemin')
+
+function browserSync(params) {
+    browsersync.init({
+        server: {
+            baseDir: './' + project_folder + '/',
+        },
+        port: 3000,
+        notify: false,
+    })
+}
