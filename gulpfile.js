@@ -66,3 +66,19 @@ function images() {
 function fonts() {
     return src(path.src.fonts).pipe(dest(path.build.fonts)).pipe(browsersync.stream())
 }
+
+// Images Compress
+function img() {
+    return src(path.src.img)
+        .pipe(
+            imagemin([
+                imagemin.gifsicle({ interlaced: true }),
+                imagemin.mozjpeg({ quality: 75, progressive: true }),
+                imagemin.optipng({ optimizationLevel: 5 }),
+                imagemin.svgo({
+                    plugins: [{ removeViewBox: true }, { cleanupIDs: false }],
+                }),
+            ]),
+        )
+        .pipe(dest(path.build.img))
+}
