@@ -47,3 +47,22 @@ function browserSync(params) {
         notify: false,
     })
 }
+
+
+// HTML
+function html() {
+    return src(path.src.html)
+        .pipe(fileinclude())
+        .pipe(dest(path.build.html))
+        .pipe(browsersync.reload({ stream: true }))
+}
+
+// Images
+function images() {
+    return src(path.src.img).pipe(dest(path.build.img)).pipe(browsersync.stream())
+}
+
+// Fonts
+function fonts() {
+    return src(path.src.fonts).pipe(dest(path.build.fonts)).pipe(browsersync.stream())
+}
