@@ -123,3 +123,34 @@ function css() {
         .pipe(dest(path.build.css))
         .pipe(browsersync.stream())
 }
+
+
+// Watch Files
+function watchFiles(params) {
+    gulp.watch([path.watch.html], html)
+    gulp.watch([path.watch.css], css)
+    gulp.watch([path.watch.js], js)
+    gulp.watch([path.watch.img], images)
+    gulp.watch([path.watch.fonts], fonts)
+}
+
+// Clean
+function clean(params) {
+    return del(path.clean)
+}
+
+// let build = gulp.series(clean, gulp.parallel(html, js, css, images, fonts))
+
+// Without clean build
+let build = gulp.series(gulp.parallel(html, js, css, images, fonts))
+let watch = gulp.parallel(build, watchFiles, browserSync)
+
+exports.img = img
+exports.images = images
+exports.js = js
+exports.html = html
+exports.css = css
+exports.fonts = fonts
+exports.build = build
+exports.watch = watch
+exports.default = watch
