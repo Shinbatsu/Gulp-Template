@@ -97,3 +97,29 @@ function js() {
         .pipe(dest(path.build.js))
         .pipe(browsersync.stream())
 }
+
+// CSS
+function css() {
+    return src(path.src.css)
+        .pipe(
+            scss({
+                outputStyle: 'expanded',
+            }),
+        )
+        .pipe(group_media())
+        .pipe(
+            autoprefixer({
+                cascade: true,
+                overrideBrowserslist: ['last 5 versions'],
+            }),
+        )
+        .pipe(dest(path.build.css))
+        .pipe(clean_css())
+        .pipe(
+            rename({
+                extname: '.min.css',
+            }),
+        )
+        .pipe(dest(path.build.css))
+        .pipe(browsersync.stream())
+}
