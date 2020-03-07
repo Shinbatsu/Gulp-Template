@@ -1,5 +1,5 @@
 {
-  "name": "new__template",
+  "name": "template",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -8,7 +8,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "gulp": "^4.0.2"
   },
