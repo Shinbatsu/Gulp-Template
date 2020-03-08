@@ -4,7 +4,16 @@
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "clean": "gulp clean",
+    "html": "gulp html",
+    "css": "gulp css",
+    "js": "gulp js",
+    "images": "gulp images",
+    "img:compress": "gulp img",
+    "fonts": "gulp fonts",
+    "build": "gulp build",
+    "watch": "gulp watch",
+    "start": "gulp"
   },
   "keywords": [],
   "author": "",
@@ -12,6 +21,7 @@
   "dependencies": {
     "gulp": "^4.0.2"
   },
+
   "devDependencies": {
     "browser-sync": "^2.27.7",
     "del": "^6.0.0",
