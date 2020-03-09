@@ -32,3 +32,19 @@ new__template/
 ├── dist/               # Production build output
 ├── gulpfile.js         # Gulp configuration
 └── package.json        # Project metadata and dependencies
+
+## Tasks Description
+
+gulp - Run all tasks and start the development server
+
+gulp html - Process HTML with includes
+
+gulp scss - Compile SCSS and autoprefix CSS
+
+gulp js - Minify JavaScript
+
+gulp images - Optimize images
+
+gulp clean - Delete the dist/ folder
+
+gulp watch - Watch files and reload on changes
