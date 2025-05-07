@@ -22,7 +22,7 @@ npm install
 ```
 
 ## Project structure
-
+```
 new__template/
 ├── src/                # Source files
 │   ├── scss/           # SCSS styles
@@ -32,7 +32,7 @@ new__template/
 ├── dist/               # Production build output
 ├── gulpfile.js         # Gulp configuration
 └── package.json        # Project metadata and dependencies
-
+```
 ## Tasks Description
 
 gulp - Run all tasks and start the development server
